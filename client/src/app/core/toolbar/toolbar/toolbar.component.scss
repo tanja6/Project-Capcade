@@ -1,0 +1,43 @@
+@import "../../../styles/colors";
+.toolbar {
+  display: flex;
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-white;
+  padding: 40px;
+  .logo {
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 40px;
+    letter-spacing: 0%;
+    color: $color-grey-titles;
+  }
+  .controls {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    .view {
+      cursor: pointer;
+      gap: 5px;
+      .active-mode {
+        background-color: #d0dce1;
+      }
+      img {
+        padding: 8px;
+        border-radius: 4px;
+      }
+    }
+    .search-new {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      .btn-add-planet {
+        height: 40px;
+        width: 120px;
+        background-color: #4c396f;
+        color: $color-white;
+      }
+    }
+  }
+}

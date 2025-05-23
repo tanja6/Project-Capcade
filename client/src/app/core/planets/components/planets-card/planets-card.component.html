@@ -1,0 +1,35 @@
+<div class="planet-card" (click)="openPlanetDetailes(planet.id)">
+  <div class="planet-card-header">
+    <img [src]="planet.imageUrl" [alt]="planet.imageName" />
+    <span>{{ planet.planetName }}</span>
+  </div>
+  <div class="planet-card-text">
+    <p>{{ planet.description }}</p>
+  </div>
+  <div class="planet-card-info">
+    <div class="left side">
+      <div class="info-item">
+        <span class="info-item-data">{{ planet.planetColor }}</span>
+        <span class="info-item-name">Color</span>
+      </div>
+      <div class="info-item">
+        <span class="info-item-data">{{
+          planet.distInMillionsKM.fromSun
+        }}</span>
+        <span class="info-item-name">Dist. from Sun</span>
+      </div>
+    </div>
+    <div class="right side">
+      <div class="info-item">
+        <span class="info-item-data">{{ planet.planetRadiusKM }}</span>
+        <span class="info-item-name">Radius in km</span>
+      </div>
+      <div class="info-item">
+        <span class="info-item-data">{{
+          planet.distInMillionsKM.fromEarth
+        }}</span>
+        <span class="info-item-name">Dist. from Earth</span>
+      </div>
+    </div>
+  </div>
+</div>

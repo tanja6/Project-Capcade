@@ -1,0 +1,60 @@
+@import "../../../../styles/colors";
+.planets-table {
+  width: 100%;
+  .planet-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    img {
+      width: 60px;
+      height: 60px;
+    }
+
+    .planet-description {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      line-clamp: 2;
+      -webkit-box-orient: vertical;
+      font-family: Inter;
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 20px;
+      color: #7a7f80;
+    }
+  }
+  .planet-name {
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: $color-grey-titles;
+  }
+  th {
+    padding-left: 10px;
+    width: 15%;
+    font-family: Inter;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #7a7f80;
+
+    &.name {
+      width: 25%;
+    }
+  }
+  td {
+    &.mat-cell {
+      padding: 5px 5px 5px 10px;
+    }
+  }
+  .row {
+    height: 76px;
+    &:hover {
+      background-color: #f7f7f7;
+      cursor: pointer;
+    }
+  }
+}

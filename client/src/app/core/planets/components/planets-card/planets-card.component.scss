@@ -1,0 +1,72 @@
+@import "../../../../styles/colors";
+.planet-card {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  flex-direction: column;
+  width: 325px;
+  height: 515px;
+  border-radius: 4px;
+  background-color: $color-white;
+  padding: 28px 20px;
+  justify-content: space-between;
+  box-sizing: border-box;
+  .planet-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    img {
+      width: 80px;
+      height: 80px;
+    }
+    span {
+      font-weight: 600;
+      font-size: 36px;
+      line-height: 40px;
+      text-align: center;
+      color: $color-grey-titles;
+    }
+  }
+  .planet-card-text {
+    height: 160px;
+    p {
+      font-size: 14px;
+      line-height: 20px;
+      color: $color-grey-text;
+      display: -webkit-box;
+      -webkit-line-clamp: 8;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .planet-card-info {
+    display: flex;
+    justify-content: space-between;
+    .side {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .info-item {
+      display: flex;
+      flex-direction: column;
+      .info-item-data {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 20px;
+        color: $color-grey-text;
+      }
+      .info-item-name {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 20px;
+        color: $color-grey-text;
+      }
+    }
+  }
+  &:hover {
+    box-shadow: #2426264f 0px 3px 5px 1px;
+    cursor: pointer;
+  }
+}

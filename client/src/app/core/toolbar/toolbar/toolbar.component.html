@@ -1,0 +1,44 @@
+<mat-toolbar class="toolbar">
+  <span class="logo">Planets</span>
+  <div class="controls">
+    <span class="view fx-center">
+      <img
+        (click)="setViewMode('grid')"
+        [src]="
+          viewMode === 'grid'
+            ? 'assets/images/grid-icon-ink.png'
+            : 'assets/images/grid-icon-grey.png'
+        "
+        [class.active-mode]="viewMode === 'grid'"
+        alt="icon-grid"
+      />
+      <mat-divider
+        vertical
+        style="height: 28px; background-color: #dedfdf"
+      ></mat-divider>
+      <img
+        (click)="setViewMode('table')"
+        [src]="
+          viewMode === 'table'
+            ? 'assets/images/table-icon-ink.png'
+            : 'assets/images/table-icon-grey.png'
+        "
+        [class.active-mode]="viewMode === 'table'"
+        alt=""
+      />
+    </span>
+    <div class="search-new">
+      <mat-form-field appearance="outline" class="custom-height">
+        <mat-icon matPrefix>search</mat-icon>
+        <mat-label>Search...</mat-label>
+        <input
+          matInput
+          type="search"
+          class="search-input"
+          (keyup)="search($event.target.value)"
+        />
+      </mat-form-field>
+      <button class="btn-add-planet" matButton>New Planet</button>
+    </div>
+  </div>
+</mat-toolbar>

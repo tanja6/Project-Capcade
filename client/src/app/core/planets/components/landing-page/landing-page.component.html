@@ -1,0 +1,12 @@
+<div [ngSwitch]="viewMode" *ngIf="planets" class="landing-page">
+  <app-planets-table
+    [planets]="planets"
+    *ngSwitchCase="'table'"
+  ></app-planets-table>
+  <div class="grid-view-container" *ngSwitchCase="'grid'">
+    <app-planets-card
+      [planet]="planet"
+      *ngFor="let planet of planets"
+    ></app-planets-card>
+  </div>
+</div>
