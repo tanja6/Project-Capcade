@@ -29,10 +29,10 @@ export class ConfirmationDialogComponent implements OnInit {
         : "delete";
     this.title =
       this.mode === "create"
-        ? "creating "
+        ? "creation "
         : this.mode === "edit"
         ? "editing "
-        : "deleteing";
+        : "deletion ";
   }
 
   cancel() {
