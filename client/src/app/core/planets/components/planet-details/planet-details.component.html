@@ -1,0 +1,37 @@
+<app-toolbar [page]="'details'"></app-toolbar>
+<div class="planet-details">
+  <div class="planet-info">
+    <img
+      *ngIf="planet?.imageUrl; else content"
+      [src]="planet.imageUrl"
+      [alt]="planet.imageName"
+    />
+    <ng-template #content> <span class="img-fake"></span></ng-template>
+    <div class="planet-description">
+      <span class="title">{{ planet?.planetName }}</span>
+      <span class="description">{{ planet?.description }}</span>
+    </div>
+  </div>
+  <div class="planet-stats">
+    <div class="stat">
+      <span class="info-item-data">{{ planet?.planetRadiusKM }}</span>
+      <span class="info-item-name">Radius in km</span>
+    </div>
+    <div class="stat">
+      <span class="info-item-data">{{
+        planet?.distInMillionsKM?.fromSun
+      }}</span>
+      <span class="info-item-name">Dist. from Sun</span>
+    </div>
+    <div class="stat">
+      <span class="info-item-data">{{ planet?.planetColor }}</span>
+      <span class="info-item-name">Color</span>
+    </div>
+    <div class="stat">
+      <span class="info-item-data">{{
+        planet?.distInMillionsKM?.fromEarth
+      }}</span>
+      <span class="info-item-name">Dist. from Earth</span>
+    </div>
+  </div>
+</div>

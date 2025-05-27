@@ -1,7 +1,9 @@
 <mat-toolbar class="toolbar">
-  <span class="logo">Planets</span>
+  <span class="logo">
+    {{ page === "details" ? planet?.planetName : "Planets" }}</span
+  >
   <div class="controls">
-    <span class="view fx-center">
+    <span class="view fx-center" *ngIf="page === 'landing'">
       <img
         (click)="setViewMode('grid')"
         [src]="
@@ -28,7 +30,11 @@
       />
     </span>
     <div class="search-new">
-      <mat-form-field appearance="outline" class="custom-height">
+      <mat-form-field
+        appearance="outline"
+        class="custom-height"
+        *ngIf="page === 'landing'"
+      >
         <mat-icon matPrefix>search</mat-icon>
         <mat-label>Search...</mat-label>
         <input
@@ -38,7 +44,30 @@
           (keyup)="search($event.target.value)"
         />
       </mat-form-field>
-      <button class="btn-add-planet" matButton>New Planet</button>
+      <button
+        class="btn btn-add-planet"
+        matButton
+        (click)="addEditPlanet(false)"
+        *ngIf="page === 'landing'"
+      >
+        New Planet
+      </button>
+      <button
+        class="btn btn-edit-planet"
+        matButton
+        (click)="addEditPlanet(true, planet.id)"
+        *ngIf="page === 'details'"
+      >
+        Edit
+      </button>
+      <button
+        class="btn btn-add-planet"
+        matButton
+        (click)="deletePlanet(planet.id)"
+        *ngIf="page === 'details'"
+      >
+        Delete
+      </button>
     </div>
   </div>
 </mat-toolbar>

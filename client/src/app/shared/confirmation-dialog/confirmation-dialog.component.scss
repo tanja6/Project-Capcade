@@ -1,0 +1,65 @@
+@import "../../styles/colors";
+.dialog-wrapper {
+  font-family: "Inter";
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  .icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+  }
+  .text-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 15px;
+    text-align: center;
+    .title {
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 28px;
+      color: $color-grey-titles;
+    }
+    .msg {
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: center;
+      color: $color-grey-titles;
+      text-align: center;
+      .name {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 0%;
+        text-align: center;
+      }
+    }
+  }
+  .btn-container {
+    display: flex;
+    gap: 20px;
+    margin-top: auto;
+    justify-content: center;
+    .btn {
+      height: 40px;
+      width: 120px;
+      background-color: #011f49;
+      color: $color-white;
+      padding: 10px 12px;
+      cursor: pointer;
+      &:disabled {
+        background-color: $color-grey-text;
+        cursor: not-allowed;
+      }
+    }
+    .cancel {
+      @extend.btn;
+      background-color: $color-white;
+      color: $color-grey-text;
+      border: none;
+    }
+  }
+}

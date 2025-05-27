@@ -3,12 +3,18 @@
   width: 100%;
   .planet-info {
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: 20px;
     img {
       width: 60px;
       height: 60px;
+    }
+    .img-fake {
+      width: 60px;
+      height: 60px;
+      background-color: rgb(246, 165, 235);
+      border-radius: 50%;
+      min-width: 60px;
     }
 
     .planet-description {

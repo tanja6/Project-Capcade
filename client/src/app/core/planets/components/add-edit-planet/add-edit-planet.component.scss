@@ -1,0 +1,110 @@
+
+@import "../../../../styles/colors";
+form{
+    font-family: 'Inter', sans-serif;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    .title{
+  
+font-weight: 600;
+font-size: 20px;
+line-height: 28px;
+color: $color-grey-titles;
+
+  
+    }
+    .photo-input-container{
+       display: flex
+;
+    align-items: center;
+    justify-content: space-between;
+        .file-input-hidden {
+  display: none;
+ .photo-label{
+    font-size: 14px;
+    line-height: 20px;
+    color: $color-grey-text;
+  }
+}
+
+.custom-upload-btn {
+height: 28px;
+border-radius: 4px;
+padding: 4px 12px;
+background-color: $color-grey-text;
+color: $color-white;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+}
+.remove-file-btn{
+     cursor: pointer;
+     margin-left: 5px;
+}
+    }
+    .form-item{
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      .form-item-label{
+        
+font-weight: 400;
+font-size: 12px;
+line-height: 20px;
+color:$color-grey-text;
+
+
+      }
+
+    .form-element{
+   
+   height: 40;
+    border-radius: 4px;
+     .mat-form-field-infix{
+        padding: 0 !important;
+     }
+     
+
+
+    }
+    .mat-form-field-wrapper{
+        padding: 0 !important;
+     }
+    }
+ .grid-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+ }
+ .btn-container{
+    display: flex;
+    gap: 20px;
+    margin-top: auto;
+    justify-content: center;
+.btn{
+    height: 40px;
+        width: 120px;
+        background-color: #011F49;
+        color: $color-white;
+        padding: 10px 12px;
+        cursor: pointer;
+        &:disabled{
+            background-color: $color-grey-text;
+            cursor:not-allowed;
+        }
+ }
+ .cancel{
+    @extend.btn;
+    background-color:  $color-white;
+    color: $color-grey-text ;
+    border: none;
+
+ }
+ }
+ #decription{
+    min-height: 100px;
+ }
+}

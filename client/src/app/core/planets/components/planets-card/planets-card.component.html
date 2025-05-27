@@ -1,6 +1,11 @@
 <div class="planet-card" (click)="openPlanetDetailes(planet.id)">
   <div class="planet-card-header">
-    <img [src]="planet.imageUrl" [alt]="planet.imageName" />
+    <img
+      *ngIf="planet.imageUrl; else content"
+      [src]="planet.imageUrl"
+      [alt]="planet.imageName"
+    />
+    <ng-template #content> <span class="img-fake"></span></ng-template>
     <span>{{ planet.planetName }}</span>
   </div>
   <div class="planet-card-text">

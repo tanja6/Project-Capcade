@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Planet } from '../../models/planet.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-planets-card',
@@ -8,13 +9,11 @@ import { Planet } from '../../models/planet.model';
 })
 export class PlanetsCardComponent implements OnInit {
  @Input() planet:Planet;
-  constructor() { }
+  constructor(private router:Router) { }
 
   ngOnInit(): void {
   }
-
    openPlanetDetailes(planetId){
-    console.log(planetId)
+    this.router.navigate(['details',planetId]);
   }
-
 }

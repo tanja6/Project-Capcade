@@ -1,0 +1,88 @@
+@import "../../../../styles/colors";
+.planet-details {
+  font-family: 'Inter';
+  display: grid;
+  grid-template-columns: 1.5fr  1fr;
+  padding: 40px;
+  box-sizing: border-box;
+  gap: 20px;
+  .planet-info {
+    display: flex;
+   align-items: center;
+    gap:20px;
+    // width: 740px;
+border-radius: 8px;
+background-color: $color-white;
+border: 1px solid #DEDFDF;
+padding: 25px;
+
+
+    img {
+      width: 180px;
+      height: 180px;
+    }
+    .img-fake{
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background-color: rgb(246, 165, 235);
+    }
+
+    .planet-description {
+        width: 325px;
+        display: flex;
+    flex-direction: column;
+    gap: 20px;
+      .title {
+      
+font-weight: 600;
+font-size: 36px;
+line-height: 40px;
+color: $color-grey-titles;
+
+      }
+
+      .description {
+    
+font-weight: 400;
+font-size: 14px;
+line-height: 20px;
+color: $color-grey-text;
+
+      }
+    }
+  }
+
+  .planet-stats {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 20px;
+
+    .stat {
+     background-color: $color-white;
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+      border-radius: 8px;
+      text-align: center;
+
+      .info-item-data{
+      
+font-weight: 500;
+font-size: 24px;
+line-height: 28px;
+color: $color-grey-titles;
+
+
+      }
+   .info-item-name{
+  
+font-weight: 400;
+font-size: 12px;
+line-height: 20px;
+color: $color-grey-text;
+
+   }
+    }
+  }
+}

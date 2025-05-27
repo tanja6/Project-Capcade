@@ -1,3 +1,4 @@
+<app-toolbar [page]="'landing'"></app-toolbar>
 <div [ngSwitch]="viewMode" *ngIf="planets" class="landing-page">
   <app-planets-table
     [planets]="planets"

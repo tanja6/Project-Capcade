@@ -3,7 +3,8 @@
     <th mat-header-cell *matHeaderCellDef mat-sort-header class="name">Name</th>
     <td mat-cell *matCellDef="let element">
       <div class="planet-info">
-        <img [src]="element.imageUrl" [alt]="element.imageName" />
+        <img *ngIf="element.imageUrl;else content" [src]="element.imageUrl" [alt]="element.imageName" />
+        <ng-template #content> <span class="img-fake"></span></ng-template>
         <div class="planet-text">
           <div class="planet-name">{{ element.planetName }}</div>
           <div class="planet-description">{{ element.description }}</div>

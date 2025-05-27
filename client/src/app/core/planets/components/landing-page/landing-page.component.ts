@@ -17,7 +17,7 @@ export class LandingPageComponent implements OnInit,OnDestroy {
    
   ngOnInit(): void {
    this.planetsService.viewMode$.pipe(takeUntil(this.unSubscribe)).subscribe((mode)=>this.viewMode = mode )
-   this.planetsService.getAllPlanets().subscribe((planets)=>{console.log(planets);this.planets = planets})
+  this.planetsService.planetList$.pipe(takeUntil(this.unSubscribe)).subscribe((planets)=>this.planets = planets)
   }
    ngOnDestroy() {
         this.unSubscribe.next();

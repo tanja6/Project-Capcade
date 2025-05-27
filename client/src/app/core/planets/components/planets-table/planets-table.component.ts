@@ -12,6 +12,7 @@ import { MatTableDataSource } from "@angular/material/table";
 import { Planet } from "../../models/planet.model";
 import { PlanetsService } from "../../services/planets.service";
 import { debounceTime, distinctUntilChanged } from "rxjs/operators";
+import { Router } from "@angular/router";
 @Component({
   selector: "app-planets-table",
   templateUrl: "./planets-table.component.html",
@@ -42,7 +43,7 @@ export class PlanetsTableComponent implements OnInit, OnChanges, AfterViewInit {
     };
   }
 
-  constructor(private planetsService: PlanetsService) {}
+  constructor(private planetsService: PlanetsService, private router:Router) {}
   ngOnChanges(changes: SimpleChanges): void {
     this.dataSource = new MatTableDataSource(changes.planets.currentValue);
   }
@@ -56,6 +57,6 @@ export class PlanetsTableComponent implements OnInit, OnChanges, AfterViewInit {
   }
 
   openPlanetDetailes(planetId) {
-    console.log(planetId);
+    this.router.navigate(['details',planetId]);
   }
 }

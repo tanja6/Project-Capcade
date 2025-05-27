@@ -1,0 +1,17 @@
+<div class="dialog-wrapper">
+    <div class="icon-wrapper">
+     <img [src]="'assets/images/confirm.png'" alt="confirm">
+    </div>
+    <div class="text-wrapper">
+        <span class="title">{{'Confirm'+' ' + title}}</span>
+        <span class="msg">
+            {{'Are you sure you want to'+ ' ' + message + ' ' }}<span class="name">{{planetName}}?</span>
+        </span>
+    </div>
+    <div class="btn-container">
+    <button class="btn create" type="button" matButton (click)="confirm()">Confirm</button>
+    
+    <button class="btn cancel" type="button" (click)="cancel()" >Cancel</button>
+    </div>
+    
+</div>

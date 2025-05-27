@@ -1,0 +1,139 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <p class="title">{{ isEdit ? "Edit Planet" : "New Planet" }}</p>
+  <div class="photo-input-container">
+    <span class="photo-label">Photo</span>
+
+    <input
+      type="file"
+      accept="image/*"
+      #fileUpload
+      class="file-input-hidden"
+      id="fileUpload"
+      (change)="onChange($event)"
+    />
+
+    <label *ngIf="!selectedFileName" for="fileUpload" class="custom-upload-btn"
+      >Upload File</label
+    >
+
+    <div *ngIf="selectedFileName" class="file-info">
+      <span>{{ selectedFileName }}</span>
+      <span type="button" class="remove-file-btn" (click)="removeFile()"
+        >✖</span
+      >
+    </div>
+  </div>
+
+  <div class="form-item">
+    <span>
+      <mat-label class="form-item-label" for="name">Name *</mat-label>
+    </span>
+    <mat-form-field
+      class="form-element custom-height custom-padding"
+      appearance="outline"
+      floatLabel="always"
+    >
+      <input
+        required
+        id="name"
+        matInput
+        type="text"
+        formControlName="planetName"
+      />
+    </mat-form-field>
+  </div>
+  <div>
+    <div class="form-item">
+      <span>
+        <mat-label class="form-item-label" for="description"
+          >Description</mat-label
+        >
+      </span>
+      <mat-form-field class="form-element" appearance="outline">
+        <textarea
+          rows="4"
+          matInput
+          id="description"
+          formControlName="description"
+        ></textarea>
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="grid-form">
+    <div class="form-item">
+      <span>
+        <mat-label class="form-item-label" for="radius-sun"
+          >Radius in km *</mat-label
+        >
+      </span>
+
+      <mat-form-field
+        class="form-element custom-height custom-padding"
+        appearance="outline"
+      >
+        <input
+          required
+          id="radius-sun"
+          matInput
+          type="number"
+          formControlName="planetRadiusKM"
+        />
+      </mat-form-field>
+    </div>
+    <div class="form-item">
+      <span>
+        <mat-label class="form-item-label" for="color">Color *</mat-label>
+      </span>
+      <mat-form-field
+        class="form-element custom-height custom-padding"
+        appearance="outline"
+      >
+        <input
+          required
+          id="color"
+          matInput
+          type="text"
+          formControlName="planetColor"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <div formGroupName="distInMillionsKM" class="grid-form">
+    <div class="form-item">
+      <span>
+        <mat-label class="form-item-label" for="sun">Dist. form Sun</mat-label>
+      </span>
+      <mat-form-field
+        class="form-element custom-height custom-padding"
+        appearance="outline"
+      >
+        <input id="sun" matInput type="number" formControlName="fromSun" />
+      </mat-form-field>
+    </div>
+    <div class="form-item">
+      <span>
+        <mat-label class="form-item-label" for="earth"
+          >Dist. form Earth</mat-label
+        >
+      </span>
+      <mat-form-field
+        class="form-element custom-height custom-padding"
+        appearance="outline"
+      >
+        <input id="earth" matInput type="number" formControlName="fromEarth" />
+      </mat-form-field>
+    </div>
+  </div>
+
+  <div class="btn-container">
+    <button
+      [disabled]="this.form.invalid"
+      class="btn create"
+      type="submit"
+      matButton
+    >
+      {{ isEdit ? "Confirm" : "Create" }}
+    </button>
+    <button class="btn cancel" type="button" (click)="cancel()">Cancel</button>
+  </div>
+</form>

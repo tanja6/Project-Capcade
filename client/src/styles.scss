@@ -33,7 +33,7 @@ background-color: #ECEFF4;
   }
 
   .mat-form-field-infix {
-    padding: 0 8px;
+    padding: 0 6px;
     height: 100%;
     display: flex;
     align-items: center;
@@ -49,6 +49,7 @@ background-color: #ECEFF4;
   .mat-form-field-label {
     font-size: 14px;
     top: 50%;
+    left: 6px;
   }
 
   .mat-form-field-label.mat-form-field-empty.mat-form-field-label-floating {
@@ -63,6 +64,7 @@ background-color: #ECEFF4;
     height: 20px;
     line-height: 20px;
   }
+
 }
 button{
     font-size: 16px;
@@ -84,3 +86,34 @@ button{
   opacity: 1 !important; 
   transform: none !important;
 }
+
+.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex:hover .mat-form-field-outline {
+   color: #a0a1a1;    
+}
+.mat-form-field-appearance-outline:not(.mat-form-field-disabled) .mat-form-field-flex .mat-form-field-outline {
+   color: #BDBFBF;    
+}
+.mat-form-field-appearance-outline.ng-invalid.ng-touched .mat-form-field-outline {
+  color: red;
+}
+
+.mat-input-element {
+  caret-color: #BDBFBF;
+}
+
+.custom-padding .mat-form-field-infix {
+    padding: 0 1px !important;}
+
+.mat-form-field-wrapper{
+  padding: 0 !important;
+}
+
+.confirm-panel-class{
+ min-width: 400px;
+height: 280px;
+border-radius: 8px;
+background-color: white;
+
+}
+
+ 

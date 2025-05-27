@@ -56,6 +56,7 @@ exports.putUpdatePlanet = (req, res) => {
         });
     } else {
       updatePlanet(planetId, planetData);
+      planetData.id = +planetId;
       res.status(200).send(planetData);
     }
   } else {
